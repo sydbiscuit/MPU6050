@@ -79,6 +79,7 @@ void setup() {
     // (38400 chosen because it works as well at 8MHz as it does at 16MHz, but
     // it's really up to you depending on your project)
     Serial.begin(115200);
+    delay(3000);
 
     // initialize device
     Serial.println("Initializing I2C devices...");
