@@ -10,6 +10,7 @@
             "includePath": [
                 "C:/VS Code Projects/MPU6050/include",
                 "C:/VS Code Projects/MPU6050/src",
+                "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/Servo/src",
                 "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/Wire/src",
                 "C:/Users/garre/.platformio/packages/framework-arduinoststm32/cores/arduino/avr",
                 "C:/Users/garre/.platformio/packages/framework-arduinoststm32/cores/arduino/stm32",
@@ -40,7 +41,6 @@
                 "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/Keyboard/src",
                 "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/Mouse/src",
                 "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/SPI/src",
-                "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/Servo/src",
                 "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/SoftwareSerial/src",
                 "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/SrcWrapper/src",
                 ""
@@ -50,6 +50,7 @@
                 "path": [
                     "C:/VS Code Projects/MPU6050/include",
                     "C:/VS Code Projects/MPU6050/src",
+                    "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/Servo/src",
                     "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/Wire/src",
                     "C:/Users/garre/.platformio/packages/framework-arduinoststm32/cores/arduino/avr",
                     "C:/Users/garre/.platformio/packages/framework-arduinoststm32/cores/arduino/stm32",
@@ -80,7 +81,6 @@
                     "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/Keyboard/src",
                     "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/Mouse/src",
                     "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/SPI/src",
-                    "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/Servo/src",
                     "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/SoftwareSerial/src",
                     "C:/Users/garre/.platformio/packages/framework-arduinoststm32/libraries/SrcWrapper/src",
                     ""

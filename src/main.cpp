@@ -54,6 +54,8 @@ THE SOFTWARE.
     #include "Wire.h"
 #endif
 
+#include <Servo.h>
+
 // class default I2C address is 0x68
 // specific I2C addresses may be passed as a parameter here
 // AD0 low = 0x68 (default for SparkFun breakout and InvenSense evaluation board)
@@ -89,14 +91,14 @@ MPU6050 mpu;
 // (in degrees) calculated from the quaternions coming from the FIFO.
 // Note that Euler angles suffer from gimbal lock (for more info, see
 // http://en.wikipedia.org/wiki/Gimbal_lock)
-//#define OUTPUT_READABLE_EULER
+#define OUTPUT_READABLE_EULER
 
 // uncomment "OUTPUT_READABLE_YAWPITCHROLL" if you want to see the yaw/
 // pitch/roll angles (in degrees) calculated from the quaternions coming
 // from the FIFO. Note this also requires gravity vector calculations.
 // Also note that yaw/pitch/roll angles suffer from gimbal lock (for
 // more info, see: http://en.wikipedia.org/wiki/Gimbal_lock)
-#define OUTPUT_READABLE_YAWPITCHROLL
+//#define OUTPUT_READABLE_YAWPITCHROLL
 
 // uncomment "OUTPUT_READABLE_REALACCEL" if you want to see acceleration
 // components with gravity removed. This acceleration reference frame is
@@ -141,6 +143,8 @@ float ypr[3];           // [yaw, pitch, roll]   yaw/pitch/roll container and gra
 // packet structure for InvenSense teapot demo
 uint8_t teapotPacket[14] = { '$', 0x02, 0,0, 0,0, 0,0, 0,0, 0x00, 0x00, '\r', '\n' };
 
+byte servoPin = D6;
+Servo servo;
 
 
 // ================================================================
@@ -178,6 +182,10 @@ void setup() {
     // the baud timing being too misaligned with processor ticks. You must use
     // 38400 or slower in these cases, or use some kind of external separate
     // crystal solution for the UART timer.
+
+    servo.attach(servoPin);
+    servo.writeMicroseconds(1500);
+    delay(3000);
 
     // initialize device
     Serial.println(F("Initializing I2C devices..."));
@@ -275,6 +283,28 @@ void loop() {
             Serial.print(euler[1] * 180/M_PI);
             Serial.print("\t");
             Serial.println(euler[2] * 180/M_PI);
+
+            if (euler[1]* 180/M_PI < -2.0)
+            {
+                servo.writeMicroseconds(1400);
+            }
+            else if (euler[1]* 180/M_PI < -15.0)
+            {
+                servo.writeMicroseconds(1300);
+            }
+            else if (euler[1]* 180/M_PI > 2.0)
+            {
+                servo.writeMicroseconds(1600);
+            }
+            else if (euler[1]* 180/M_PI > 15.0)
+            {
+                servo.writeMicroseconds(1700);
+            }
+            else
+            {
+                servo.writeMicroseconds(1500);
+            }
+            
         #endif
 
         #ifdef OUTPUT_READABLE_YAWPITCHROLL
