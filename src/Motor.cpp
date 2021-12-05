@@ -12,7 +12,7 @@ Motor::Motor(void)
 void Motor::initialize(byte in_pin, uint16_t fwd_sig, uint16_t Reverse, uint16_t stop)
  {
 	sir.attach(in_pin);
-	sir.writeMicroseconds(1500);
+	sir.writeMicroseconds(1000);
 	delay(7000);	
     SERVO_PIN = in_pin;
     FWD_SIG = fwd_sig;

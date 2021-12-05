@@ -69,7 +69,7 @@ Servo servo;
 
 Motor motor;
 
-byte servoPin = D6;
+byte servoPin = D8;
 
 #define LED_PIN 13
 bool blinkState = false;
@@ -82,7 +82,7 @@ void setup() {
         Fastwire::setup(400, true);
     #endif
 
-    motor.initialize(D6, 1900, 1100, 1500);
+    motor.initialize(D8, 1200, 1100, 1000);
 
 
     delay(2000);
