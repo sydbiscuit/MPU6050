@@ -68,6 +68,7 @@ int16_t gx, gy, gz;
 Servo servo;
 
 Motor motor;
+Motor motor2;
 
 byte servoPin = D8;
 
@@ -83,6 +84,7 @@ void setup() {
     #endif
 
     motor.initialize(D8, 1200, 1100, 1000);
+    motor2.initialize(D9, 1200, 1100, 1000);
 
 
     delay(2000);
@@ -173,6 +175,19 @@ void loop() {
     else
     {
         motor.updateMotor(50);
+    }
+
+    if (gx > 5000)
+    {
+        motor2.updateMotor(75);
+    }
+    else if (gx < -5000)
+    {
+        motor2.updateMotor(25);
+    }
+    else
+    {
+        motor2.updateMotor(50);
     }
 
     // blink LED to indicate activity
